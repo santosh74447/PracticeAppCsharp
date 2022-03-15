@@ -31,5 +31,43 @@ namespace PracticeApp
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string user = txtUserName.Text.Trim();
+            string pwd = txtPassword.Text.Trim();
+            if (user.Length <= 0)
+            {
+                MessageBox.Show( "Username cannot be empty!!", "Error", MessageBoxButtons.OK);
+                txtUserName.Focus();
+                return;
+            }
+            if (pwd.Length <= 0)
+            {
+                MessageBox.Show("Password cannot be empty!!", "Error", MessageBoxButtons.OK);
+                txtPassword.Focus();
+                return;
+            }
+
+            if(user=="san" && pwd == "san")
+            {
+                MessageBox.Show("Welcome to code practice center", "Success", MessageBoxButtons.OK);
+
+                this.Hide();
+                MainForm mform = new MainForm();
+                mform.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password!!", "Error", MessageBoxButtons.OK);
+                txtUserName.Clear();
+                txtPassword.Clear();
+                txtUserName.Focus();
+                return;
+            }
+
+
+
+        }
     }
 }

@@ -30,8 +30,8 @@ namespace PracticeApp
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -52,14 +52,6 @@ namespace PracticeApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(149, 21);
-            this.txtUserName.Multiline = true;
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(186, 23);
-            this.txtUserName.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -69,6 +61,13 @@ namespace PracticeApp
             this.label1.TabIndex = 1;
             this.label1.Text = "Enter Username";
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(149, 21);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(186, 20);
+            this.txtUserName.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -92,10 +91,9 @@ namespace PracticeApp
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(149, 21);
-            this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(186, 23);
+            this.txtPassword.Size = new System.Drawing.Size(186, 20);
             this.txtPassword.TabIndex = 0;
             // 
             // lblErrorMessage
@@ -116,6 +114,7 @@ namespace PracticeApp
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Form1
             // 
