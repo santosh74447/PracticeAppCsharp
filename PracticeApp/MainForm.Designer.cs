@@ -40,6 +40,7 @@ namespace PracticeApp
             this.addNewUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.updateExistingUserToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteExistingUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuIsLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@ namespace PracticeApp
             this.registerUserToolStripMenuItem,
             this.viewUserToolStripMenuItem,
             this.sPRegisterUserToolStripMenuItem,
-            this.sPViewUserToolStripMenuItem});
+            this.sPViewUserToolStripMenuItem,
+            this.menuIsLogin});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -77,6 +79,7 @@ namespace PracticeApp
             this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
             this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
             // 
             // updateExistingUserToolStripMenuItem
             // 
@@ -124,6 +127,12 @@ namespace PracticeApp
             this.deleteExistingUserToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.deleteExistingUserToolStripMenuItem.Text = "Delete Existing User";
             // 
+            // menuIsLogin
+            // 
+            this.menuIsLogin.Name = "menuIsLogin";
+            this.menuIsLogin.Size = new System.Drawing.Size(57, 20);
+            this.menuIsLogin.Text = "Logout";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,7 +141,9 @@ namespace PracticeApp
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -153,5 +164,6 @@ namespace PracticeApp
         private System.Windows.Forms.ToolStripMenuItem updateExistingUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem deleteExistingUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sPViewUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuIsLogin;
     }
 }

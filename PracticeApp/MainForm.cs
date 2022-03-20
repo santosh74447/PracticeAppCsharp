@@ -12,9 +12,25 @@ namespace PracticeApp
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(bool islogin)
         {
             InitializeComponent();
+
+            if (islogin == true)
+            {
+                menuIsLogin.Text = "Logout";
+            }
+            else
+            {
+                Form1 loginFrm = new Form1();
+                loginFrm.ShowDialog();
+            }
+        }
+
+        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegisterUser rUser = new RegisterUser();
+            rUser.ShowDialog();
         }
     }
 }

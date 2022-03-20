@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -51,11 +52,10 @@ namespace PracticeApp
 
             if(user=="san" && pwd == "san")
             {
-                MessageBox.Show("Welcome to code practice center", "Success", MessageBoxButtons.OK);
+                // MessageBox.Show("Welcome to code practice center", "Success", MessageBoxButtons.OK);
+                bool isLoginValid = UserLogin(user, pwd);
 
                 this.Hide();
-                MainForm mform = new MainForm();
-                mform.Show();
             }
             else
             {
@@ -66,8 +66,31 @@ namespace PracticeApp
                 return;
             }
 
-
-
         }
+
+        public bool UserLogin(string user, string pwd)
+        {
+            SqlConnection conn = new SqlConnection(@"data source=DESKTOP-E760RLJ\MSSQLSERVER01; initial catalog=practiceApp; user id=sa; password=pwd; integrated security=true;");
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "SELECT * FROM tbl_user";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+
+            conn.Open();
+            SqlDataReader rdr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(rdr);
+            conn.Close();
+
+            if (dt.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+
+
+
     }
 }
